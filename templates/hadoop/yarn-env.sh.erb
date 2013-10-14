@@ -6,19 +6,7 @@ export HADOOP_YARN_USER=${HADOOP_YARN_USER:-yarn}
 # resolve links - $0 may be a softlink
 export YARN_CONF_DIR="${YARN_CONF_DIR:-$YARN_HOME/conf}"
 
-# some Java parameters
-# export JAVA_HOME=/home/y/libexec/jdk1.6.0/
-if [ "$JAVA_HOME" != "" ]; then
-  #echo "run java in $JAVA_HOME"
-  JAVA_HOME=$JAVA_HOME
-fi
-  
-if [ "$JAVA_HOME" = "" ]; then
-  echo "Error: JAVA_HOME is not set."
-  exit 1
-fi
-
-JAVA=$JAVA_HOME/bin/java
+JAVA=java
 JAVA_HEAP_MAX=-Xmx1000m 
 
 # check envvars which might override default args
